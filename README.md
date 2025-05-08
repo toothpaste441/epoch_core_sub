@@ -29,8 +29,8 @@ files.upload()  # Upload your kaggle.json here
 
 
 
-Phases of the Task
-Phase 1 – Unimodal Pipelines
+# Phases of the Task
+# Phase 1 – Unimodal Pipelines
 Audio CNN:
 Convert audio to spectrograms or MFCCs
 Train a CNN to classify emotions from these 2D visual representations
@@ -48,7 +48,7 @@ Embedding layer (128-dim), bidirectional GRU for temporal context, fully connect
 
 I have not used this for multimodal fusion due to low accuary as the transcrpits do not have much significant differneces for the RNN to learn. 
 
-Phase 2 – Multimodal Fusion
+# Phase 2 – Multimodal Fusion
 Merge the visual features from the CNN and text features from the RNN
 Explore different fusion strategies:
 Early fusion: concatenate embeddings before classification
