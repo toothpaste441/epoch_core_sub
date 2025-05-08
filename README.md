@@ -37,6 +37,10 @@ Train a CNN to classify emotions from these 2D visual representations
 
 A 3-layer CNN processes input of shape [3, 128, 256] through Conv1 (3→16), Conv2 (16→32), Conv3 (32→64) with MaxPooling after each, followed by flattening and dense layers FC1 (128 units, ReLU, dropout) and FC2 (8 output classes via CrossEntropyLoss).
 
+training and validation accuracy:
+![image](https://github.com/user-attachments/assets/707d830e-1093-464c-a9bd-3c1b038b7ddb)
+
+
 # Text RNN:
 Generate transcripts from the audio (e.g., using Whisper or Google Speech-to-Text)
 Train an RNN (e.g., LSTM or GRU) on these transcripts to classify emotions
@@ -44,6 +48,7 @@ Train an RNN (e.g., LSTM or GRU) on these transcripts to classify emotions
 Embedding layer (128-dim), bidirectional GRU for temporal context, fully connected output layer for emotion classification, trained with CrossEntropyLoss and Adam optimizer (lr=1e-3).
 
 ![image](https://github.com/user-attachments/assets/e1749a8b-9a02-4e3f-bc64-33be0b541fe8)
+
 ![image](https://github.com/user-attachments/assets/2c9ad3df-0f5a-4038-8b79-55d16b5ea7a7)
 
 I have not used this for multimodal fusion due to low accuary as the transcrpits do not have much significant differneces for the RNN to learn. 
