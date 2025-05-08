@@ -55,3 +55,7 @@ Early fusion: concatenate embeddings before classification
 Late fusion: average/logit voting
 
 I have combined mel-spectrograms (128×160) and audio features (pitch, RMS, ZCR, etc.) using a CNN with early fusion.
+
+
+![image](https://github.com/user-attachments/assets/84e7628a-a33f-461f-a34c-e8e3a31cddfc)
+
