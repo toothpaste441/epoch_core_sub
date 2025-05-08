@@ -31,13 +31,13 @@ files.upload()  # Upload your kaggle.json here
 
 # Phases of the Task
 # Phase 1 – Unimodal Pipelines
-Audio CNN:
+# Audio CNN:
 Convert audio to spectrograms or MFCCs
 Train a CNN to classify emotions from these 2D visual representations
 
 A 3-layer CNN processes input of shape [3, 128, 256] through Conv1 (3→16), Conv2 (16→32), Conv3 (32→64) with MaxPooling after each, followed by flattening and dense layers FC1 (128 units, ReLU, dropout) and FC2 (8 output classes via CrossEntropyLoss).
 
-Text RNN:
+# Text RNN:
 Generate transcripts from the audio (e.g., using Whisper or Google Speech-to-Text)
 Train an RNN (e.g., LSTM or GRU) on these transcripts to classify emotions
 
