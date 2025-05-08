@@ -35,9 +35,10 @@ files.upload()  # Upload your kaggle.json here
 Convert audio to spectrograms or MFCCs
 Train a CNN to classify emotions from these 2D visual representations
 
-A 3-layer CNN processes input of shape [3, 128, 256] through Conv1 (3→16), Conv2 (16→32), Conv3 (32→64) with MaxPooling after each, followed by flattening and dense layers FC1 (128 units, ReLU, dropout) and FC2 (8 output classes via CrossEntropyLoss).
+Audio files are preprocessed by converting them into 128-band mel spectrograms of fixed width (256 frames), normalized, and padded or cropped as needed to ensure uniform input shape. The CNN model comprises five convolutional blocks with batch normalization and ReLU activation, followed by max pooling to progressively reduce spatial dimensions. After flattening, the features are passed through two fully connected layers with dropout for regularization, ending in an output layer that predicts one of the eight emotion classes. The model is trained using the Adam optimizer with a learning rate of 0.003 and CrossEntropyLoss as the criterion. Data is split into 80% training and 20% validation sets, and training runs for 50 epochs. While training accuracy improves steadily, reaching around 80%, validation accuracy fluctuates between 30% and 67%, likely due to small validation size, class imbalance, or overfitting. The absence of techniques like early stopping and learning rate scheduling may also contribute to the instability. Despite these issues, the model shows clear learning progress. Improvements such as stratified sampling, data augmentation, class-weighted loss, early stopping, and learning rate scheduling are recommended to enhance generalization and stabilize validation performance.
 
 training and validation accuracy:
+
 ![image](https://github.com/user-attachments/assets/707d830e-1093-464c-a9bd-3c1b038b7ddb)
 
 
